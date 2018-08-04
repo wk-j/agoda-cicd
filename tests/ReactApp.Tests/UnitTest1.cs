@@ -13,5 +13,11 @@ namespace ReactApp.Tests {
             var result = nameService.GetName(title);
             Assert.Equal(expected, result);
         }
+
+        public void Bug1() {
+            lock (null) {
+
+            }
+        }
     }
 }
