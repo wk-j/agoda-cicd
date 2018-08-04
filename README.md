@@ -6,7 +6,7 @@ Tools
 - yarn 1.7.0 / npm 1.7.0
 - .NET Core 2.1
 - Git
-- App veyer
+- App veyor
 - xUnit
 - Sonar cloud
 - Code https://codeshare.io/techatagoda20180804
@@ -21,3 +21,8 @@ dotnet new react --output src/ReactApp
 ASPNETCORE_ENVIRONMENT=Development
 dotnet run src/ReactApp
 ```
+
+How to set up ano email
+
+- https://github.com/settings/emails
+- [x] Keep my email address private
