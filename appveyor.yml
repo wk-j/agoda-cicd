@@ -27,7 +27,7 @@ test_script:
   - cmd: dotnet restore ./tests/ReactApp.Tests/ReactApp.Tests.csproj --verbosity m
   - cmd: dotnet test ./tests/ReactApp.Tests
   - ps: >-
-      & $env:USERPROFILE\.nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe -register:user -oldStyle -target:"dotnet.exe" -targetargs:"test tests/ReactApp.tests/ReactApp.Tests.csproj" -filter:"*" -output:"coverage.xml"
+      & $env:USERPROFILE\.nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe -register:user -oldStyle -target:"dotnet.exe" -targetargs:"test tests/ReactApp.tests/ReactApp.Tests.csproj" -filter:"+[ReactApp*]* +[tests*]*" -output:"coverage.xml"
   - ps: >-
       choco install --no-progress codecov
   - ps: >-
