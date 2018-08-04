@@ -2,7 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/eed0q7n8ardyq7a9?svg=true)](https://ci.appveyor.com/project/wk-j/agoda-cicd)
 [![codecov](https://codecov.io/gh/wk-j/agoda-cicd/branch/master/graph/badge.svg)](https://codecov.io/gh/wk-j/agoda-cicd)
-[![sonarcloud](https://sonarcloud.io/api/project_badges/measure?project=agoda-cicd&metric=alert_status)]
+![sonarcloud](https://sonarcloud.io/api/project_badges/measure?project=agoda-cicd&metric=alert_status)
 
 
 Tools / Services
