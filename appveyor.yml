@@ -26,16 +26,17 @@ clone_depth: 1
 test_script:
   - cmd: dotnet restore ./tests/ReactApp.Tests/ReactApp.Tests.csproj --verbosity m
   - cmd: dotnet test ./tests/ReactApp.Tests
+
   - ps: >-
       & $env:USERPROFILE\.nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe -register:user -oldStyle -target:"dotnet.exe" -targetargs:"test tests/ReactApp.tests/ReactApp.Tests.csproj" -filter:"+[ReactApp*]* +[tests*]*" -output:"coverage.xml"
   - ps: >-
       choco install --no-progress codecov
-  - ps: >-
-      codecov -f coverage.xml
-      # if ( ( $env:APPVEYOR_REPO_BRANCH -Eq "master" ) -Or $env:APPVEYOR_PULL_REQUEST_NUMBER )
-      # {
-      #   dotnet "C:\ProgramData\chocolatey\lib\sonarscanner-msbuild-netcoreapp2.0\tools\SonarScanner.MSBuild.dll" end /d:sonar.login="$env:SonarKey"
-      # }
+
+  - cmd: dotnet tool install -g dotnet-sonarscanner
+  - cmd: dotnet-sonarscanner begin /k:"agoda-cicd" /d:sonar.organization="wk-j-github" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="940f6517a5a823b166a31a9173557dedbdbc9401"
+  - cmd: dotnet build tests/ReactApp.Tests/ReactApp.Tests.csproj
+  - cmd: dotnet-sonarscanner end /d:sonar.login="940f6517a5a823b166a31a9173557dedbdbc9401"
+
 on_finish :
   # any cleanup in here
 deploy: off
