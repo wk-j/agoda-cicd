@@ -15,7 +15,7 @@ before_build:
   - cmd: dotnet restore ./src/ReactApp/ReactApp.csproj --verbosity m
 build_script:
   # output will be in ./src/bin/debug/netcoreapp1.1/publish
-  - cmd: dotnet publish ./src/RectApp/ReactApp.csproj
+  - cmd: dotnet publish ./src/ReactApp/ReactApp.csproj
 after_build:
   # For once the build has completed
 artifacts:
