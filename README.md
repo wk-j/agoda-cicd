@@ -1,5 +1,8 @@
 ## CI / CD
 
+[![Build status](https://ci.appveyor.com/api/projects/status/eed0q7n8ardyq7a9?svg=true)](https://ci.appveyor.com/project/wk-j/agoda-cicd)
+
+
 Tools
 
 - Node 8.0
