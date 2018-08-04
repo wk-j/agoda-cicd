@@ -16,3 +16,8 @@ Create project
 ```bash
 dotnet new react --output src/ReactApp
 ```
+
+```bash
+ASPNETCORE_ENVIRONMENT=Development
+dotnet run src/ReactApp
+```
