@@ -27,15 +27,15 @@ test_script:
   - cmd: dotnet restore ./tests/ReactApp.Tests/ReactApp.Tests.csproj --verbosity m
   - cmd: cd ./tests/ReactApp.Tests
   - cmd: dotnet xunit
-  - ps: >-
-      & $env:USERPROFILE\.nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe -register:user -oldStyle -target:"dotnet.exe" -targetargs:"test tests/ReactTests.csproj" -filter:"*" -output:"coverage.xml"
-      choco install --no-progress codecov
+  # - ps: >-
+  #     & $env:USERPROFILE\.nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe -register:user -oldStyle -target:"dotnet.exe" -targetargs:"test tests/ReactTests.csproj" -filter:"*" -output:"coverage.xml"
+  #     choco install --no-progress codecov
 
-      codecov -f coverage.xml
-      if ( ( $env:APPVEYOR_REPO_BRANCH -Eq "master" ) -Or $env:APPVEYOR_PULL_REQUEST_NUMBER )
-      {
-        dotnet "C:\ProgramData\chocolatey\lib\sonarscanner-msbuild-netcoreapp2.0\tools\SonarScanner.MSBuild.dll" end /d:sonar.login="$env:SonarKey"
-      }
+  #     codecov -f coverage.xml
+  #     if ( ( $env:APPVEYOR_REPO_BRANCH -Eq "master" ) -Or $env:APPVEYOR_PULL_REQUEST_NUMBER )
+  #     {
+  #       dotnet "C:\ProgramData\chocolatey\lib\sonarscanner-msbuild-netcoreapp2.0\tools\SonarScanner.MSBuild.dll" end /d:sonar.login="$env:SonarKey"
+  #     }
 on_finish :
   # any cleanup in here
 deploy: off
@@ -45,3 +45,7 @@ notifications:
     on_build_success: true
     on_build_failure: true
     on_build_status_changed: true
+
+environment:
+  codecov:
+    secure: jRV7l+VKCGZuN2ZJ4Cu8/2h5JZHRPOdyODh/Mm1/GV9Lbs8lbS8paHmePjWTNuzv
