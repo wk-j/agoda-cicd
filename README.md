@@ -11,11 +11,11 @@ Tools / Services
 - yarn 1.7.0 / npm 1.7.0
 - .NET Core 2.1
 - Git
-- App veyor
 - xUnit
+- https://ci.appveyor.com/
 - https://github.com/OpenCover/opencover
 - https://codecov.io
-- Sonar cloud
+- https://sonarcloud.io
 
 Create project
 
@@ -39,13 +39,4 @@ Find global package path
 
 ```bash
 dotnet nuget locals --list global-packages
-```
-
-Sonar cloud
-
-```
-dotnet tool install -g dotnet-sonarscanner
-dotnet-sonarscanner begin /k:"agoda-cicd" /d:sonar.organization="wk-j-github" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="940f6517a5a823b166a31a9173557dedbdbc9401"
-dotnet build tests/ReactApp.Tests/ReactApp.Tests.csproj
-dotnet-sonarscanner end /d:sonar.login="940f6517a5a823b166a31a9173557dedbdbc9401"
 ```
