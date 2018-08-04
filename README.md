@@ -2,7 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/eed0q7n8ardyq7a9?svg=true)](https://ci.appveyor.com/project/wk-j/agoda-cicd)
 
-Tools
+Tools / Services
 
 - Node 8.0
 - yarn 1.7.0 / npm 1.7.0
@@ -11,7 +11,6 @@ Tools
 - App veyor
 - xUnit
 - Sonar cloud
-- Code https://codeshare.io/techatagoda20180804
 
 Create project
 
@@ -29,18 +28,10 @@ dotnet run src/ReactApp
 How to set up ano email
 
 - https://github.com/settings/emails
-- [x] Keep my email address private
+- Keep my email address private
 
-
-Find global tool path
+Find global package path
 
 ```bash
 dotnet nuget locals --list global-packages
 ```
-
-Coverage
-
-```bash
-mono /Users/wk/.nuget/packages/opencover/4.6.519/tools/OpenCover.Console.exe -register:user -oldStyle -target:"dotnet" -targetargs:"test tests/ReactApp.Tests"
-```
-
